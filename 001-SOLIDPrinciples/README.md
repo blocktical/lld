@@ -20,28 +20,22 @@ This repository contains curated examples, explanations, and code snippets demon
 
 ---
 
-## 📁 Folder Structure
+## 📁 TRICK - The S.O.L.I.D Superhero Team!
+**S** — Single Responsibility Man
+- He only does one job. Like a superhero who only delivers pizzas — no side quests!
 
-```bash
-SOLIDPrinciples/
-│
-├── S-Single-Responsibility/
-│   └── example.js
-│
-├── O-Open-Closed/
-│   └── example.js
-│
-├── L-Liskov-Substitution/
-│   └── example.js
-│
-├── I-Interface-Segregation/
-│   └── example.js
-│
-├── D-Dependency-Inversion/
-│   └── example.js
-│
-└── README.md
-```
+**O** — Open-Closed Girl
+- She loves new gadgets, but never breaks her old superhero suit to add them. Always open to upgrade, but never messes with what already works.
+
+**L** — Liskov Lad
+- He’s super polite — you can replace any hero in the team with him, and no one will notice! He fits perfectly everywhere.
+
+**I** — Interface Inspector
+- He hates fat manuals. He insists every hero only gets the exact instructions they need — no extra boring stuff!
+
+**D** — Dependency Dodger
+- He never depends on anyone directly. He uses secret signals (interfaces) to communicate so he can swap partners anytime!
+
 
 Each folder includes:
 - ✅ A real-world analogy
