@@ -1,4 +1,4 @@
-# 🧠 Strategy Design Pattern (Layman Friendly)
+# 🧠 Strategy Design Pattern 
 
 ## 💡 What is Strategy Pattern?
 
