@@ -37,3 +37,6 @@ User can pay using:
 We’ll show how the bad approach looks and how Strategy Pattern fixes it.
 
 ---
+
+Happy Designing! ✨  
+*— Blocktical by Examsbox -*

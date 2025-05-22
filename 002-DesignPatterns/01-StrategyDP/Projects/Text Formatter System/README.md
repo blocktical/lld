@@ -36,3 +36,9 @@ This project uses the **Strategy Design Pattern** to apply different text format
 
 ```bash
 python main.py
+
+
+---
+
+Happy Designing! ✨  
+*— Blocktical by Examsbox -*
