@@ -4,6 +4,7 @@
 
 This project uses the **Strategy Design Pattern** to apply different text formatting strategies (uppercase, lowercase, etc.) dynamically at runtime.
 
+---
 
 Happy Designing! ✨  
 *— Blocktical by Examsbox -*
