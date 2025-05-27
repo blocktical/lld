@@ -53,6 +53,3 @@ Track your progress as you learn and implement the 23 design patterns categorize
 - ⏳ Pending – Yet to be implemented
 
 ---
-
-Feel free to check off patterns as you complete them.  
-Want help with the next pattern? Just say the name! 💡
