@@ -11,8 +11,8 @@ Track your progress as you learn and implement the 23 design patterns categorize
 | ✅ Singleton        | ✅ Done      | One shared instance                  |
 | ✅ Factory          | ✅ Done      | Object based on input                |
 | ✅ Abstract Factory | ✅ Done      | Factory of factories                 |
-| ✅ Builder          | ✅ Pending   | Step-by-step construction            |
-| ❗ Prototype        | ⏳ Pending   | Clone existing object                |
+| ✅ Builder          | ✅ Done      | Step-by-step construction            |
+| ✅ Prototype        | ✅ Done      | Clone existing object                |
 
 ---
 

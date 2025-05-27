@@ -1,0 +1,8 @@
+[Welcome Email] to ankit@example.com:
+Hello Ankit, Welcome to our platform!
+
+[Welcome Email] to amit@example.com:
+Hello Amit, Welcome to our platform!
+
+[Password Reset] to amit@example.com:
+Hi Amit, here is your password reset link: https://reset.com/abc123
