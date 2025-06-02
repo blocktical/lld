@@ -21,6 +21,8 @@ Imagine you're building a notification system that can send messages through mul
 | Implementor          | `MessageSender`             | Interface for sending messages                        |
 | Concrete Implementors| `SendGridSender`, `TwilioSender`, `WhatsAppSender` | Actual providers used to send messages |
 
+### UML
+![Notification UML Diagram](./UML.md)
 
 
 ```bash
