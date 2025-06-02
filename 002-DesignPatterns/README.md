@@ -21,8 +21,8 @@ Track your progress as you learn and implement the 23 design patterns categorize
 | Pattern Name       | Status      | Use Case                                        |
 |--------------------|-------------|-------------------------------------------------|
 | ✅ Decorator        | ✅ Done      | Add behavior without altering class            |
-| ❗ Adapter          | ⏳ Pending   | Convert one interface to another               |
-| ❗ Bridge           | ⏳ Pending   | Separate abstraction from implementation       |
+| ✅ Adapter          | ✅ Done      | Convert one interface to another               |
+| ✅ Bridge           | ✅ Done      | Separate abstraction from implementation       |
 | ❗ Composite        | ⏳ Pending   | Tree structures of objects                     |
 | ❗ Facade           | ⏳ Pending   | Simplify complex subsystems                    |
 | ❗ Flyweight        | ⏳ Pending   | Optimize memory with shared objects            |
