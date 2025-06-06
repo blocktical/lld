@@ -13,7 +13,6 @@ classDiagram
     }
 
     class Main {
-        <<script>>
         +main()
     }
 
