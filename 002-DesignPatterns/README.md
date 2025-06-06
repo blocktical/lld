@@ -23,8 +23,8 @@ Track your progress as you learn and implement the 23 design patterns categorize
 | ✅ Decorator        | ✅ Done      | Add behavior without altering class            |
 | ✅ Adapter          | ✅ Done      | Convert one interface to another               |
 | ✅ Bridge           | ✅ Done      | Separate abstraction from implementation       |
-| ❗ Composite        | ⏳ Pending   | Tree structures of objects                     |
-| ❗ Facade           | ⏳ Pending   | Simplify complex subsystems                    |
+| ✅ Composite        | ✅ Done      | Tree structures of objects                     |
+| ✅ Facade           | ✅ Done      | Simplify complex subsystems                    |
 | ❗ Flyweight        | ⏳ Pending   | Optimize memory with shared objects            |
 | ❗ Proxy            | ⏳ Pending   | Surrogate object with control                  |
 
