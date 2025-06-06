@@ -6,6 +6,9 @@ Track your progress as you learn and implement the 23 design patterns categorize
 
 ## 🏗️ Creational Design Patterns (Object Creation Related)
 
+Creational Design Patterns are a category of design patterns in software engineering that focus on the process of object creation. Instead of instantiating objects directly using constructors, these patterns provide various mechanisms to create objects in a controlled, flexible, and reusable way.
+
+
 | Pattern Name        | Status      | Use Case                             |
 |---------------------|-------------|--------------------------------------|
 | ✅ Singleton        | ✅ Done      | One shared instance                  |
@@ -17,6 +20,9 @@ Track your progress as you learn and implement the 23 design patterns categorize
 ---
 
 ## 🧱 Structural Design Patterns (Class/Structure Wrapping)
+
+Structural Design Patterns are design patterns that focus on how classes and objects are composed to form larger structures while keeping the system flexible and efficient.
+They help ensure that if one part of a system changes, the entire structure doesn't need to change.
 
 | Pattern Name       | Status      | Use Case                                        |
 |--------------------|-------------|-------------------------------------------------|
@@ -32,12 +38,14 @@ Track your progress as you learn and implement the 23 design patterns categorize
 
 ## 🤝 Behavioral Design Patterns (Object Interaction Logic)
 
+Behavioral Design Patterns focus on how objects interact and communicate with each other. They define patterns of communication between objects to assign responsibilities and control the flow of algorithms or operations.
+
 | Pattern Name             | Status      | Use Case                                           |
 |--------------------------|-------------|----------------------------------------------------|
 | ✅ Strategy               | ✅ Done      | Different algorithms via composition               |
 | ✅ Observer               | ✅ Done      | Notify subscribers on change                       |
 | ✅ Command                | ✅ Done      | Encapsulate requests as objects                    |
-| ❗ Chain of Responsibility| ⏳ Pending   | Pass request down chain                            |
+| ✅ Chain of Responsibility| ✅ Done      | Pass request down chain                            |
 | ❗ Interpreter            | ⏳ Pending   | Interpret expressions in grammar                   |
 | ❗ Iterator               | ⏳ Pending   | Access elements sequentially                       |
 | ❗ Mediator               | ⏳ Pending   | Centralize communication                           |
