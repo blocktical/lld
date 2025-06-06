@@ -36,7 +36,7 @@ Track your progress as you learn and implement the 23 design patterns categorize
 |--------------------------|-------------|----------------------------------------------------|
 | ✅ Strategy               | ✅ Done      | Different algorithms via composition               |
 | ✅ Observer               | ✅ Done      | Notify subscribers on change                       |
-| ❗ Command                | ⏳ Pending   | Encapsulate requests as objects                    |
+| ✅ Command                | ✅ Done      | Encapsulate requests as objects                    |
 | ❗ Chain of Responsibility| ⏳ Pending   | Pass request down chain                            |
 | ❗ Interpreter            | ⏳ Pending   | Interpret expressions in grammar                   |
 | ❗ Iterator               | ⏳ Pending   | Access elements sequentially                       |
