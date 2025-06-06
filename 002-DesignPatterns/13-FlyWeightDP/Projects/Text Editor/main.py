@@ -1,4 +1,4 @@
-# main.py
+
 from glyph_factory import GlyphFactory
 from character import Character
 

@@ -25,7 +25,7 @@ Track your progress as you learn and implement the 23 design patterns categorize
 | ✅ Bridge           | ✅ Done      | Separate abstraction from implementation       |
 | ✅ Composite        | ✅ Done      | Tree structures of objects                     |
 | ✅ Facade           | ✅ Done      | Simplify complex subsystems                    |
-| ❗ Flyweight        | ⏳ Pending   | Optimize memory with shared objects            |
+| ✅ Flyweight        | ✅ Done      | Optimize memory with shared objects            |
 | ❗ Proxy            | ⏳ Pending   | Surrogate object with control                  |
 
 ---
