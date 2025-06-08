@@ -1,0 +1,5 @@
+bhai set x = 10;
+bhai bol x;
+bhai add x 5;
+bhai bol x;
+bhai bol "Kaam ho gaya bhai!";
