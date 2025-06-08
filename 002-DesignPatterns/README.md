@@ -46,8 +46,8 @@ Behavioral Design Patterns focus on how objects interact and communicate with ea
 | ✅ Observer               | ✅ Done      | Notify subscribers on change                       |
 | ✅ Command                | ✅ Done      | Encapsulate requests as objects                    |
 | ✅ Chain of Responsibility| ✅ Done      | Pass request down chain                            |
-| ❗ Interpreter            | ⏳ Pending   | Interpret expressions in grammar                   |
-| ❗ Iterator               | ⏳ Pending   | Access elements sequentially                       |
+| ✅ Interpreter            | ✅ Done      | Interpret expressions in grammar                   |
+| ✅ Iterator               | ✅ Done      | Access elements sequentially                       |
 | ❗ Mediator               | ⏳ Pending   | Centralize communication                           |
 | ❗ Memento                | ⏳ Pending   | Undo/redo state snapshots                          |
 | ❗ State                  | ⏳ Pending   | Behavior based on internal state                   |
