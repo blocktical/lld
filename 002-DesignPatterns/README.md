@@ -52,7 +52,7 @@ Behavioral Design Patterns focus on how objects interact and communicate with ea
 | ✅ Memento                | ✅ Done      | Undo/redo state snapshots                          |
 | ✅ State                  | ✅ Done      | Behavior based on internal state                   |
 | ✅ Template Method        | ✅ Done      | Skeleton of algorithm in base class                |
-| ❗ Visitor                | ⏳ Pending   | Separate operations from structure                 |
+| ✅ Visitor                | ✅ Done      | Separate operations from structure                 |
 
 ---
 
