@@ -49,7 +49,7 @@ Behavioral Design Patterns focus on how objects interact and communicate with ea
 | ✅ Interpreter            | ✅ Done      | Interpret expressions in grammar                   |
 | ✅ Iterator               | ✅ Done      | Access elements sequentially                       |
 | ✅ Mediator               | ✅ Done      | Centralize communication                           |
-| ❗ Memento                | ⏳ Pending   | Undo/redo state snapshots                          |
+| ✅ Memento                | ✅ Done      | Undo/redo state snapshots                          |
 | ❗ State                  | ⏳ Pending   | Behavior based on internal state                   |
 | ❗ Template Method        | ⏳ Pending   | Skeleton of algorithm in base class                |
 | ❗ Visitor                | ⏳ Pending   | Separate operations from structure                 |
