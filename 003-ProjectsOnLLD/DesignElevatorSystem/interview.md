@@ -1,9 +1,3 @@
-
----
-
-### `interview.md`
-
-```markdown
 # Elevator System: Interview Q&A
 
 This file contains MAANG-style interview questions and answers related to the Elevator System design.
