@@ -85,3 +85,69 @@ flowchart TD
     CheckDraw -- Yes --> Draw --> End
     CheckDraw -- No --> SwitchPlayer --> GameLoop
 ```
+
+
+# Turn-by-Turn Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Player1
+    participant GameEngine
+    participant Board
+    participant Player2
+
+    Player1->>GameEngine: makeMove(x, y)
+    GameEngine->>Board: isValidMove(x, y)?
+    Board-->>GameEngine: true/false
+    alt Valid Move
+        GameEngine->>Board: markCell(x, y, Player1)
+        GameEngine->>Board: checkWin()
+        Board-->>GameEngine: true/false
+        alt Win
+            GameEngine->>Player1: declareWinner(Player1)
+        else No Win
+            GameEngine->>Board: isDraw()
+            Board-->>GameEngine: true/false
+            alt Draw
+                GameEngine->>All: declareDraw()
+            else Continue
+                GameEngine->>Player2: nextTurn()
+            end
+        end
+    else Invalid Move
+        GameEngine->>Player1: showError("Invalid Move")
+    end
+```
+
+#  Game State Diagram
+
+```mermaid
+stateDiagram-v2
+    [*] --> Initializing
+    Initializing --> WaitingForPlayer1
+    WaitingForPlayer1 --> ValidatingMoveP1 : input(row,col)
+    ValidatingMoveP1 --> InvalidMoveP1 : invalid
+    InvalidMoveP1 --> WaitingForPlayer1
+
+    ValidatingMoveP1 --> CheckingWinP1 : valid
+    CheckingWinP1 --> Player1Wins : win
+    CheckingWinP1 --> CheckingDraw : not win
+
+    CheckingDraw --> Draw : board full
+    CheckingDraw --> WaitingForPlayer2 : not full
+
+    WaitingForPlayer2 --> ValidatingMoveP2 : input(row,col)
+    ValidatingMoveP2 --> InvalidMoveP2 : invalid
+    InvalidMoveP2 --> WaitingForPlayer2
+
+    ValidatingMoveP2 --> CheckingWinP2 : valid
+    CheckingWinP2 --> Player2Wins : win
+    CheckingWinP2 --> CheckingDraw2 : not win
+
+    CheckingDraw2 --> Draw : board full
+    CheckingDraw2 --> WaitingForPlayer1 : not full
+
+    Player1Wins --> [*]
+    Player2Wins --> [*]
+    Draw --> [*]
+```
