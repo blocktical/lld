@@ -2,77 +2,82 @@
 
 This file contains the Mermaid diagrams for the Class, State, and Sequence flows.
 
+---
+
 ## 1. Class Diagram
 
 This diagram shows the classes, their attributes, methods, and the relationships between them (inheritance, aggregation, composition).
 
 ```mermaid
 classDiagram
-    direction "Direction" {
-        <<Enumeration>>
-        UP
-        DOWN
-        IDLE
+    class Direction {
+        <<enumeration>>
+        +UP
+        +DOWN
+        +IDLE
     }
 
     class ElevatorSystem {
-        <<Singleton>>
-        -List~ElevatorCar~ elevators
-        -SchedulingStrategy schedulingStrategy
-        +getInstance() : ElevatorSystem
-        +dispatchRequest(Request)
+        <<singleton>>
+        - List~ElevatorCar~ elevators
+        - SchedulingStrategy schedulingStrategy
+        + getInstance() ElevatorSystem
+        + dispatchRequest(Request)
     }
 
     class ElevatorCar {
-        -int id
-        -int currentFloor
-        -ElevatorState state
-        -Direction direction
-        -Set~int~ destinationFloors
-        +run()
-        +move()
-        +setState(ElevatorState)
+        - int id
+        - int currentFloor
+        - ElevatorState state
+        - Direction direction
+        - Set~int~ destinationFloors
+        + run()
+        + move()
+        + setState(ElevatorState)
     }
 
     class Request {
-        -int sourceFloor
-        -int destinationFloor
-        -Direction direction
+        - int sourceFloor
+        - int destinationFloor
+        - Direction direction
     }
 
     class ElevatorState {
-        <<Interface>>
-        +handleRequest(ElevatorCar, Request)
-        +updateState(ElevatorCar)
+        <<interface>>
+        + handleRequest(ElevatorCar, Request)
+        + updateState(ElevatorCar)
     }
 
     class IdleState {
-        +handleRequest(ElevatorCar, Request)
-        +updateState(ElevatorCar)
+        + handleRequest(ElevatorCar, Request)
+        + updateState(ElevatorCar)
     }
+
     class MovingUpState {
-        +handleRequest(ElevatorCar, Request)
-        +updateState(ElevatorCar)
+        + handleRequest(ElevatorCar, Request)
+        + updateState(ElevatorCar)
     }
+
     class MovingDownState {
-        +handleRequest(ElevatorCar, Request)
-        +updateState(ElevatorCar)
+        + handleRequest(ElevatorCar, Request)
+        + updateState(ElevatorCar)
     }
 
     class SchedulingStrategy {
-        <<Interface>>
-        +scheduleElevator(List~ElevatorCar~, Request) : ElevatorCar
+        <<interface>>
+        + scheduleElevator(List~ElevatorCar~, Request) ElevatorCar
     }
+
     class NearestCarStrategy {
-        +scheduleElevator(List~ElevatorCar~, Request) : ElevatorCar
+        + scheduleElevator(List~ElevatorCar~, Request) ElevatorCar
     }
 
     ElevatorSystem "1" *-- "many" ElevatorCar : manages
-    ElevatorSystem o-- "1" SchedulingStrategy : uses
+    ElevatorSystem o-- SchedulingStrategy : uses
     ElevatorSystem ..> Request : processes
 
-    ElevatorCar "1" *-- "1" ElevatorState : has a
-    ElevatorCar ..> direction
+    ElevatorCar *-- ElevatorState : has
+    ElevatorCar --> Direction : uses
 
     ElevatorState <|.. IdleState
     ElevatorState <|.. MovingUpState
@@ -80,9 +85,11 @@ classDiagram
 
     SchedulingStrategy <|.. NearestCarStrategy
 ```
+---
 
 ## 2. State Diagram
 This diagram illustrates the possible states of an ElevatorCar and the transitions between them.
+
 ```mermaid
 stateDiagram-v2
     [*] --> Idle
@@ -92,20 +99,16 @@ stateDiagram-v2
 
     MovingUp --> Idle : no more requests
     MovingUp --> MovingUp : stop at floor & continue up
-    MovingUp --> MovingDown : reaches top of requests & reverses
+    MovingUp --> MovingDown : reverse at top
 
     MovingDown --> Idle : no more requests
     MovingDown --> MovingDown : stop at floor & continue down
-    MovingDown --> MovingUp : reaches bottom of requests & reverses
-
-    state "Moving" as Moving {
-        state "MovingUp" as Up
-        state "MovingDown" as Down
-    }
+    MovingDown --> MovingUp : reverse at bottom
 ```
 
 ## 3. Sequence Diagram (User Journey)
 This diagram shows the sequence of interactions when a user calls an elevator and travels to a destination floor.
+
 ```mermaid
 sequenceDiagram
     actor User
@@ -113,25 +116,26 @@ sequenceDiagram
     participant ElevatorSystem
     participant ElevatorCar
 
-    User->>+FloorButton: press(UP)
-    FloorButton->>+ElevatorSystem: dispatchRequest(Request)
-    Note over ElevatorSystem: Use SchedulingStrategy to find best car
-    ElevatorSystem->>+ElevatorCar: addRequest(Request)
-    ElevatorCar-->>-ElevatorSystem:
-    FloorButton-->>-User: Light On
+    User ->>+ FloorButton: press(UP)
+    FloorButton ->>+ ElevatorSystem: dispatchRequest(Request)
+    Note over ElevatorSystem: Uses SchedulingStrategy to assign ElevatorCar
+    ElevatorSystem ->>+ ElevatorCar: addRequest(Request)
+    ElevatorCar -->>- ElevatorSystem: ack
+    FloorButton -->>- User: light on
 
-    loop Elevator Moves to Source Floor
-        ElevatorCar->>ElevatorCar: move()
+    loop Move to source floor
+        ElevatorCar ->> ElevatorCar: move()
     end
-    Note over ElevatorCar: Arrives at source floor, Doors Open
+    Note over ElevatorCar: Arrives at source, doors open
 
-    User->>+ElevatorCar: Enters and presses floor 5
-    Note over ElevatorCar: Creates internal request for floor 5
-    ElevatorCar-->>-User:
-    Note over ElevatorCar: Doors Close
+    User ->>+ ElevatorCar: enter & press floor 5
+    Note over ElevatorCar: adds floor 5 to destination list
+    ElevatorCar -->>- User: acknowledge
+    Note over ElevatorCar: doors close
 
-    loop Elevator Moves to Destination Floor
-        ElevatorCar->>ElevatorCar: move()
+    loop Move to destination floor
+        ElevatorCar ->> ElevatorCar: move()
     end
-    Note over ElevatorCar: Arrives at destination, Doors Open
+    Note over ElevatorCar: Arrives at floor 5, doors open
+
 ```

@@ -47,6 +47,8 @@ void handleRequest(Request req) {
 This is brittle, hard to read, and difficult to extend. Every new state requires modifying this central, complex method, increasing the risk of bugs.
 
 </details>
+
+
 <details>
 <summary><strong>Q3: How do you handle multiple simultaneous requests? Describe the concurrency model.</strong></summary>
 Concurrency is critical. My design handles it in a few key ways:
@@ -62,13 +64,15 @@ Thread-Safe Data Structures: Within each elevator, the set of destination floors
 This model decouples request submission from request processing and allows elevators to operate in parallel, which is an accurate reflection of the real world.
 
 </details>
+
+
 <details>
 <summary><strong>Q4: Your design works for a single elevator. How do you scale it to a building with multiple elevators? This is where the scheduling algorithm comes in.</strong></summary>
 Scaling to multiple elevators is the primary responsibility of the ElevatorSystem and is why the Strategy Pattern is so valuable.
 
 When the dispatcher thread pulls a request from the queue, it doesn't just blindly assign it. Instead, it invokes the configured SchedulingStrategy:
 
-```code
+```java
 // Inside ElevatorSystem's dispatcher thread
 Request newRequest = requestQueue.take();
 ElevatorCar bestElevator = schedulingStrategy.scheduleElevator(this.elevators, newRequest);
@@ -87,6 +91,8 @@ ZoningStrategy: In very tall buildings, you can assign certain elevators to serv
 By using the Strategy pattern, we can start with a simple NearestCarStrategy and upgrade to a more sophisticated LookAheadStrategy later without changing any part of the ElevatorSystem or ElevatorCar code. We just inject a different strategy object at initialization.
 
 </details>
+
+
 <details>
 <summary><strong>Q5: What are some important edge cases, and how would your design handle them?</strong></summary>
 Handling edge cases is crucial for a robust system. Here are a few:
