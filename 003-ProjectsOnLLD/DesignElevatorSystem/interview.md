@@ -36,7 +36,8 @@ void handleRequest(Request req) {
     } else if (this.status == Status.MOVING_DOWN) {
         // logic for moving down
     }
-}```
+}
+```
 
 This is brittle, hard to read, and difficult to extend. Every new state requires modifying this central, complex method, increasing the risk of bugs.
 
