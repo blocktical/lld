@@ -54,3 +54,34 @@ Game --> Board : controls
 Game --> GameStatus : uses
 Board --> Cell : contains
 ```
+
+# 🔄 Game Flow – Tic Tac Toe
+
+```mermaid
+flowchart TD
+    Start([Start Game])
+    InitPlayers[Initialize Players]
+    InitBoard[Initialize Board]
+    GameLoop{Is Game In Progress?}
+    ShowBoard[Display Board]
+    Input[Player Inputs Row and Column]
+    ValidateMove{Is Move Valid?}
+    MarkCell[Mark Cell]
+    CheckWin{Did Current Player Win?}
+    Win[Show Winner and End Game]
+    CheckDraw{Is Board Full?}
+    Draw[Declare Draw and End Game]
+    SwitchPlayer[Switch Current Player]
+    End([End])
+
+    Start --> InitPlayers --> InitBoard --> GameLoop
+    GameLoop --> ShowBoard --> Input --> ValidateMove
+    ValidateMove -- No --> Input
+    ValidateMove -- Yes --> MarkCell --> CheckWin
+
+    CheckWin -- Yes --> Win --> End
+    CheckWin -- No --> CheckDraw
+
+    CheckDraw -- Yes --> Draw --> End
+    CheckDraw -- No --> SwitchPlayer --> GameLoop
+```
